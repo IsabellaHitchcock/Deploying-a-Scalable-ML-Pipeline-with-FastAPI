@@ -7,7 +7,7 @@ local_URL = "http://127.0.0.1:8000/"
 r = requests.get(local_URL) # Your code here
 
 # TODO: print the status code
-print("Status: "r.status_code)
+print("Status: ", r.status_code)
 # TODO: print the welcome message
 print(r.json)
 
