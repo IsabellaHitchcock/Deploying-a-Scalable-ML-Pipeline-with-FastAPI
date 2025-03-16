@@ -4,14 +4,12 @@ import requests
 
 # TODO: send a GET using the URL http://127.0.0.1:8000
 local_URL = "http://127.0.0.1:8000/"
-r = requests.get(local_URL) # Your code here
+r = requests.get(local_URL)  # Your code here
 
 # TODO: print the status code
 print("Status: ", r.status_code)
 # TODO: print the welcome message
-print(r.json)
-
-
+print(r.json())  # Corrected
 
 data = {
     "age": 37,
@@ -31,9 +29,9 @@ data = {
 }
 
 # TODO: send a POST using the data above
-r = requests.post("http://127.0.0.1:8000/predictions", data=json.dumps(data)) # Your code here
+r = requests.post('http://127.0.0.1:8000/data/', json=data)  # Your code here
 
 # TODO: print the status code
 print('Status: ', r.status_code)
 # TODO: print the result
-print(r.json)
+print(r.json())  # Corrected
