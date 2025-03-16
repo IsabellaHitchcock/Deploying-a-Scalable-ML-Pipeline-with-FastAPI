@@ -4,7 +4,7 @@ import requests
 
 # TODO: send a GET using the URL http://127.0.0.1:8000
 local_URL = "http://127.0.0.1:8000/"
-r = requests.get(local_URL)  # Your code here
+r = requests.get("http://127.0.0.1:8000/")  # Your code here
 
 # TODO: print the status code
 print("Status: ", r.status_code)

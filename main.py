@@ -36,10 +36,9 @@ model = load_model(path)
 app = FastAPI() # your code here
 
 # TODO: create a GET on the root giving a welcome message
-@app.get("/hello")
+@app.get("/")
 async def get_root():
-    """ Say hello!"""
-    # your code here
+    """Say hello!"""
     return {"greeting": "Hello. Welcome to the API."}
 
 
