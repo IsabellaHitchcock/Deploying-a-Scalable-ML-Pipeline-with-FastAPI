@@ -17,8 +17,8 @@ def test_one(data):
     train, test = train_test_split(data, test_size=0.2, random_state=12)
     
     # Calculate expected sizes
-    total_rows = len(data)
-    expected_test_size = int(total_rows * 0.2)
+    total_rows = len(data) 
+    expected_test_size = round(int(total_rows * 0.2))
     expected_train_size = total_rows - expected_test_size
 
     # Assert correct sizes
@@ -32,8 +32,8 @@ def test_two(data):
     train, test = train_test_split(data, test_size=0.2, random_state=12)
     
     # Assert types
-    assert isinstance(train, data), "Train set is not a DataFrame."
-    assert isinstance(test, data), "Test set is not a DataFrame."
+    assert isinstance(train, pd.DataFrame), "Train set is not a DataFrame."
+    assert isinstance(test, pd.DataFrame), "Test set is not a DataFrame."
 
 def test_three(data):
     """
