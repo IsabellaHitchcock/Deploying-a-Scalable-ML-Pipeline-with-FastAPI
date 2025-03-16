@@ -1,7 +1,7 @@
 import pytest
-# TODO: add necessary import
 from sklearn.model_selection import train_test_split
 import pandas as pd
+import os
 
 @pytest.fixture(scope="session")
 def data():
@@ -10,8 +10,7 @@ def data():
     df = pd.read_csv(data_path)
     return df
 
-# TODO: implement the first test. Change the function name and input as needed
-def test_one():
+def test_one(data):
     """
     Test that the train and test sets are segmented into correct proportions.
     """
@@ -25,25 +24,20 @@ def test_one():
     # Assert correct sizes
     assert len(train) == expected_train_size, f"Train size is {len(train)}, expected {expected_train_size}."
     assert len(test) == expected_test_size, f"Test size is {len(test)}, expected {expected_test_size}."
-    
 
-
-# TODO: implement the second test. Change the function name and input as needed
-def test_two():
+def test_two(data):
     """
     Test that the split returns pd.DataFrame data type.
     """
     train, test = train_test_split(data, test_size=0.2, random_state=12)
     
     # Assert types
-    assert isinstance(train, pd.DataFrame), "Train set is not a DataFrame."
-    assert isinstance(test, pd.DataFrame), "Test set is not a DataFrame."
+    assert isinstance(train, data), "Train set is not a DataFrame."
+    assert isinstance(test, data), "Test set is not a DataFrame."
 
-
-# TODO: implement the third test. Change the function name and input as needed
-def test_three():
+def test_three(data):
     """
-    tests that data has proper number of columns
+    Test that data has the proper number of columns.
     """
-    # Your code here
-    assert data.shape[1] == 15, f"Expected 15 columns, but got {data.shape[1]}"
+    # Assert the number of columns
+    assert data.shape[1] == 15, f"Expected 15 columns, but got {data.shape[1]}."
