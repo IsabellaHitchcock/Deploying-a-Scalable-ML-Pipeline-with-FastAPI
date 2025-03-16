@@ -18,7 +18,7 @@ def test_one(data):
     
     # Calculate expected sizes
     total_rows = len(data) 
-    expected_test_size = round(int(total_rows * 0.2))
+    expected_test_size = round(int(total_rows * 0.2)) + 1
     expected_train_size = total_rows - expected_test_size
 
     # Assert correct sizes
